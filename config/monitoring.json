@@ -1,0 +1,12 @@
+{
+  "base_sample_interval": 3.0,
+  "adaptive_adjustment": true,
+  "max_interval_multiplier": 2.0,
+  "min_interval_multiplier": 0.5,
+  "optimization_interval": 30.0,
+  "enable_performance_tracking": true,
+  "_metadata": {
+    "saved_at": "2025-07-29T11:23:00.489188",
+    "version": "1.0"
+  }
+}

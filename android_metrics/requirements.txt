@@ -1,0 +1,11 @@
+PyQt5==5.15.9
+pyqtgraph==0.13.3
+matplotlib==3.7.2
+SQLAlchemy==2.0.19
+PyMySQL==1.1.0
+pandas==2.0.3
+numpy<2.0.0
+openpyxl==3.1.2
+psutil==5.9.5
+cryptography==41.0.3
+configparser==6.0.0

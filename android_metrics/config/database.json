@@ -1,0 +1,20 @@
+{
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "username": "metrics_user",
+    "password": "metrics_pass",
+    "database": "android_metrics",
+    "charset": "utf8mb4"
+  },
+  "connection_pool": {
+    "pool_size": 10,
+    "max_overflow": 20,
+    "pool_timeout": 30,
+    "pool_recycle": 3600
+  },
+  "data_retention": {
+    "days": 3,
+    "auto_cleanup": true
+  }
+}
