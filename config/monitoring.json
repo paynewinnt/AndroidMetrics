@@ -1,12 +1,45 @@
 {
-  "base_sample_interval": 3.0,
-  "adaptive_adjustment": true,
-  "max_interval_multiplier": 2.0,
-  "min_interval_multiplier": 0.5,
-  "optimization_interval": 30.0,
-  "enable_performance_tracking": true,
-  "_metadata": {
-    "saved_at": "2025-07-29T11:23:00.489188",
-    "version": "1.0"
+  "monitoring": {
+    "sample_interval": 2,
+    "duration_minutes": 20,
+    "max_apps": 6,
+    "auto_start": false
+  },
+  "thresholds": {
+    "cpu_max": 90,
+    "memory_max": 80,
+    "network_max": 1000,
+    "fps_min": 30
+  },
+  "presets": [
+    {
+      "name": "Default",
+      "packages": [],
+      "sample_interval": 1,
+      "duration_minutes": 20
+    },
+    {
+      "name": "Performance Test",
+      "packages": [],
+      "sample_interval": 1,
+      "duration_minutes": 30
+    },
+    {
+      "name": "Long Term",
+      "packages": [],
+      "sample_interval": 5,
+      "duration_minutes": 240
+    }
+  ],
+  "adb": {
+    "timeout": 10,
+    "retry_count": 3,
+    "commands": {
+      "list_packages": "shell pm list packages -3",
+      "cpu_info": "shell dumpsys cpuinfo",
+      "mem_info": "shell dumpsys meminfo",
+      "battery_stats": "shell dumpsys batterystats",
+      "network_stats": "shell cat /proc/net/xt_qtaguid/stats"
+    }
   }
 }

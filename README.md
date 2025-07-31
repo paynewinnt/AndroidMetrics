@@ -50,7 +50,7 @@ cd AndroidMetrics
 ### 2. 安装依赖
 ```bash
 # 使用requirements.txt安装
-pip install -r android_metrics/requirements.txt
+pip install -r requirements.txt
 
 # 或手动安装核心依赖
 pip install PyQt5==5.15.9 pyqtgraph==0.13.3 SQLAlchemy==2.0.19 PyMySQL==1.1.0 pandas==2.0.3 matplotlib==3.7.2
@@ -59,7 +59,7 @@ pip install PyQt5==5.15.9 pyqtgraph==0.13.3 SQLAlchemy==2.0.19 PyMySQL==1.1.0 pa
 ### 3. 环境检查
 ```bash
 # 检查运行环境和依赖
-python android_metrics/check_env.py
+python check_env.py
 ```
 
 ### 4. 设备准备
@@ -73,7 +73,7 @@ python android_metrics/check_env.py
 ### 启动应用
 ```bash
 # 启动主程序
-python android_metrics/main.py
+python main.py
 ```
 
 ### 基本使用流程
@@ -105,53 +105,45 @@ python android_metrics/main.py
 AndroidMetrics/
 ├── README.md                   # 项目说明文档
 ├── PERFORMANCE_OPTIMIZATION.md # 性能优化指南
-├── android_metrics/            # 核心应用目录
-│   ├── main.py                # 应用程序入口
-│   ├── requirements.txt       # Python依赖包
-│   ├── check_env.py          # 环境检查工具
-│   │
-│   ├── core/                 # 核心功能模块
-│   │   ├── adb_collector.py  # ADB数据采集器(支持缓存优化)
-│   │   ├── config_manager.py # 配置管理器
-│   │   ├── data_manager.py   # 数据管理器
-│   │   ├── performance_monitor.py # 性能监控核心
-│   │   └── optimized_config.py    # 性能优化配置
-│   │
-│   ├── database/             # 数据库模块
-│   │   ├── connection.py     # 数据库连接管理
-│   │   ├── models.py         # SQLAlchemy数据模型
-│   │   ├── data_storage.py   # 数据存储服务
-│   │   ├── operations.py     # 数据库操作接口
-│   │   ├── maintenance.py    # 数据库维护工具
-│   │   └── exceptions.py     # 数据库异常处理
-│   │
-│   ├── gui/                  # 图形用户界面
-│   │   ├── main_window.py    # 主窗口界面
-│   │   ├── app_selector.py   # 应用选择器
-│   │   ├── monitor_view.py   # 监控视图组件
-│   │   ├── chart_widgets.py  # 图表组件
-│   │   └── chart_config.py   # 图表配置和主题
-│   │
-│   ├── utils/                # 工具模块
-│   │   ├── export.py         # 数据导出工具
-│   │   └── validators.py     # 数据验证工具
-│   │
-│   ├── config/               # 配置文件
-│   │   ├── database.json     # 数据库配置
-│   │   ├── monitoring.json   # 监控参数配置
-│   │   ├── performance.json  # 性能优化配置
-│   │   ├── gui.json         # 界面配置
-│   │   └── alerts.json      # 告警配置
-│   │
-│   └── logs/                 # 日志文件目录
-│       └── android_metrics.log
+├── main.py                    # 应用程序入口
+├── requirements.txt           # Python依赖包
+├── check_env.py              # 环境检查工具
 │
-└── config/                   # 全局配置文件备份
-    ├── database.json
-    ├── monitoring.json
-    ├── performance.json
-    ├── gui.json
-    └── alerts.json
+├── core/                     # 核心功能模块
+│   ├── adb_collector.py      # ADB数据采集器(支持缓存优化)
+│   ├── config_manager.py     # 配置管理器
+│   ├── data_manager.py       # 数据管理器
+│   ├── performance_monitor.py # 性能监控核心
+│   └── optimized_config.py    # 性能优化配置
+│
+├── database/                 # 数据库模块
+│   ├── connection.py         # 数据库连接管理
+│   ├── models.py             # SQLAlchemy数据模型
+│   ├── data_storage.py       # 数据存储服务
+│   ├── operations.py         # 数据库操作接口
+│   ├── maintenance.py        # 数据库维护工具
+│   └── exceptions.py         # 数据库异常处理
+│
+├── gui/                      # 图形用户界面
+│   ├── main_window.py        # 主窗口界面
+│   ├── app_selector.py       # 应用选择器
+│   ├── monitor_view.py       # 监控视图组件
+│   ├── chart_widgets.py      # 图表组件
+│   └── chart_config.py       # 图表配置和主题
+│
+├── utils/                    # 工具模块
+│   ├── export.py             # 数据导出工具
+│   └── validators.py         # 数据验证工具
+│
+├── config/                   # 配置文件
+│   ├── database.json         # 数据库配置
+│   ├── monitoring.json       # 监控参数配置
+│   ├── performance.json      # 性能优化配置
+│   ├── gui.json             # 界面配置
+│   └── alerts.json          # 告警配置
+│
+└── logs/                     # 日志文件目录
+    └── android_metrics.log
 ```
 
 ## ⚙️ 配置说明
@@ -232,7 +224,7 @@ adb shell getprop ro.debuggable
 python --version
 
 # 重新安装依赖
-pip install -r android_metrics/requirements.txt --force-reinstall
+pip install -r requirements.txt --force-reinstall
 
 # 检查PyQt5安装
 python -c "import PyQt5; print(PyQt5.__version__)"
@@ -250,7 +242,7 @@ python -c "import PyQt5; print(PyQt5.__version__)"
 - 参考 `PERFORMANCE_OPTIMIZATION.md` 优化指南
 
 ### 日志分析
-应用运行日志保存在 `android_metrics/logs/android_metrics.log`，包含：
+应用运行日志保存在 `logs/android_metrics.log`，包含：
 - 应用启动和初始化信息
 - ADB命令执行状态
 - 数据库操作记录
@@ -284,13 +276,13 @@ git clone https://github.com/paynewinnt/AndroidMetrics.git
 cd AndroidMetrics
 
 # 安装开发依赖
-pip install -r android_metrics/requirements.txt
+pip install -r requirements.txt
 
 # 运行环境检查
-python android_metrics/check_env.py
+python check_env.py
 
 # 启动开发版本
-python android_metrics/main.py
+python main.py
 ```
 
 ## 📄 许可证

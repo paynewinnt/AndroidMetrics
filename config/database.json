@@ -1,14 +1,20 @@
 {
-  "pool_size": 10,
-  "max_overflow": 20,
-  "pool_timeout": 30,
-  "pool_recycle": 3600,
-  "batch_size": 50,
-  "flush_interval": 5.0,
-  "connection_pool_max_size": 20,
-  "enable_batch_processing": true,
-  "_metadata": {
-    "saved_at": "2025-07-29T11:23:00.489050",
-    "version": "1.0"
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "username": "metrics_user",
+    "password": "metrics_pass",
+    "database": "android_metrics",
+    "charset": "utf8mb4"
+  },
+  "connection_pool": {
+    "pool_size": 10,
+    "max_overflow": 20,
+    "pool_timeout": 30,
+    "pool_recycle": 3600
+  },
+  "data_retention": {
+    "days": 3,
+    "auto_cleanup": true
   }
 }

@@ -1,7 +1,7 @@
 {
   "adb_timeout": 8,
-  "adb_retry_count": 1,
-  "max_parallel_commands": 8,
+  "adb_retry_count": 2,
+  "max_parallel_commands": 6,
   "cache_timeout": 30,
   "cache_l1_size": 100,
   "cache_l2_size": 500,
@@ -13,7 +13,7 @@
     "device_info": 60.0
   },
   "_metadata": {
-    "saved_at": "2025-07-29T11:23:00.488938",
+    "saved_at": "2025-07-28T19:30:00",
     "version": "1.0"
   }
 }
